@@ -19,12 +19,12 @@ const deepCompare = (obj1: any, obj2: any): boolean => {
 
     // Recursively compare nested objects
     for (const key of keys1) {
-        if (!deepCompare(obj1[key], obj2[key])) {
-            return false;
+        if (deepCompare(obj1[key], obj2[key])) {
+            return true;
         }
     }
 
-    return true;
+    return false;
 }
 
 export default deepCompare;
